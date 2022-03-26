@@ -1,0 +1,172 @@
+.chouka-page {
+    padding: 10px;
+
+    .chouka-nav-box {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .chouka-nav {
+            width: 45%;
+            text-align: center;
+            height: 40px;
+            line-height: 40px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #FFFFFF;
+            border-radius: 4px;
+            background: #6e6e6e;
+            transition: all .15s ease-in-out;
+        }
+
+        .chouka-nav-select {
+            color: #ffeda8;
+            background: #01c0b6;
+        }
+    }
+
+    .chouka-main {
+        margin-top: 40px;
+        .chouka-bg {
+            height: calc(100vw - 20px);
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            .main-img {
+                width: 200px;
+                height: 180px;
+                margin-bottom: 20px;
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+            }
+
+            .main-btn {
+                height: 50px;
+                width: 50%;
+                line-height: 44px;
+                font-size: 14px;
+                color: #ffeda8;
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+                font-weight: bold;
+                text-align: center;
+            }
+        }
+    }
+
+    .chouka-mask {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        .mask-title {
+            margin: 0;
+        }
+
+        .up-waring {
+            font-size: 14px;
+            font-weight: bold;
+        }
+    }
+
+    .card-box {
+        // margin-top: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        // position: absolute;
+        z-index: 10;
+        width: 100%;
+        height: 100vh;
+        .container,
+        .container_su,
+        .flip_su,
+        .front,
+        .flip,
+        .back {
+            width: 250px;
+            height: 400px;
+        }
+        .flip, .flip_su{
+            position: relative;
+        }
+        .front,
+        .back {
+            border-radius: 10px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            backface-visibility:hidden;
+        }
+        .front {
+            z-index:2;
+        }
+        .back {
+            transform: rotateY(180deg);
+        }
+        .flip {
+            animation: turn 1s ease-in-out infinite;
+            transform-style: preserve-3d;
+        }
+        .container {
+            animation: scal 5s 1;
+            perspective: 1000;
+        }
+        .container_su {
+            // animation: succe 1.5s infinite;
+            // background: #ffeda8;
+            // border-radius: 6px;
+        }
+        .flip_su {
+            animation: succe 1s linear 1;
+            transform-style: preserve-3d;
+            background: #ffeda8;
+            border-radius: 6px;
+        }
+    }
+}
+
+@keyframes turn {
+    0% {
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    100% {
+        transform: perspective(1000px) rotateY(360deg);
+    }
+}
+
+@keyframes scal {
+    0% {
+        transform: perspective(1000px) scale(0.1, 0.1) translateY(-1500px) translateZ(-1000px);
+    }
+    100% {
+        transform: perspective(1000px) scale(1, 1) translateY(0px) translateZ(0px);
+    }
+}
+
+@keyframes succe {
+    0% {
+        transform:perspective(1000px) scale(0.1, 0.1) translateY(-1500px) translateZ(-1000px) rotateY(0deg);
+    }
+    26% {
+        transform:perspective(1000px) scale(0.3, 0.3) translateY(-1000px) translateZ(-666px) rotateY(360deg);
+    }
+    55% {
+        transform:perspective(1000px) scale(0.6, 0.6) translateY(-500px) translateZ(-333px) rotateY(720deg);
+    }
+    80% {
+        transform:perspective(1000px) scale(1.2, 1.2) translateY(0px) translateZ(0px) rotateY(1080deg);
+    }
+    90% {
+        transform:perspective(1000px) scale(0.9, 0.9) translateY(0px) translateZ(0px) rotateY(1080deg);
+    }
+    100% {
+        transform:perspective(1000px) scale(1, 1) translateY(0px) translateZ(0px) rotateY(1080deg);
+    }
+}

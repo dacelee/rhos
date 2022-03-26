@@ -1,0 +1,276 @@
+.xh-page {
+    padding: 10px;
+    .xh-top-bg {
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        padding: 20px;
+        border-radius: 8px;
+        .top-box {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            align-items: center;
+            .left-item {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                span {
+                    &:nth-of-type(1) {
+                        font-size: 15px;
+                        font-weight: bold;
+                        color: #FFFFFF;
+                    }
+                    &:nth-of-type(2) {
+                        margin-top: 5px;
+                        font-size: 13px;
+                        font-weight: 400;
+                        color: #FFFFFF;
+                        border: 1px solid #FFFFFF;
+                        border-radius: 20px;
+                        width: 48px;
+                        height: 27px;
+                        text-align: center;
+                        line-height: 27px;
+                    }
+                }
+            }
+            .right-item {
+                width: 58px;
+                height: 33px;
+            }
+        }
+        .bot-box {
+            margin-top: 30px;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            align-items: center;
+            .bot-item {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                &:nth-of-type(1) {
+                    border-right: 1px solid #F5F5F5;
+                }
+                span {
+                    &:nth-of-type(1) {
+                        font-size: 15px;
+                        font-weight: bold;
+                        color: #FFFFFF;
+                    }
+                    &:nth-of-type(2) {
+                        margin-top: 6px;
+                        font-size: 13px;
+                        font-weight: 300;
+                        color: #FFFFFF;
+                    }
+                }
+            }
+        }
+    }
+    .coin-seting {
+        margin-top: 10px;
+        padding: 20px;
+        border-radius: 10px;
+        background: #202020;
+        .title {
+            font-size: 13px;
+            font-weight: 400;
+            color: #FFFFFF;
+            margin-bottom: 10px;
+        }
+        .select-box {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            .select-item {
+                margin-right: 10px;
+                border-radius: 30px;
+                width: 57px;
+                height: 27px;
+                line-height: 27px;
+                text-align: center;
+                font-size: 13px;
+                color: #FFFFFF;
+                border: 1px solid #FFFFFF;
+                transition: all .2s ease-in-out;
+            }
+        }
+        .select-text {
+            padding-left: 15px;
+            font-size: 11px;
+            color: #F5CE8C;
+            font-weight: 400;
+        }
+        .inp-box {
+            margin-top: 10px;
+            padding: 15px;
+            background: #313131;
+            border-radius: 10px;
+            border: 2px solid #707070;
+            .inp-top {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .inp-main {
+                    --font-size: 15px;
+                    font-weight: 400;
+                    --color: #FFFFFF;
+                    --background: transparent;
+                    --placeholder-color: #FFFFFF;
+                    width: 176px;
+                    border-bottom: 1px solid #ffffff4f;
+                }
+                .inp-coin {
+                    font-size: 11px;
+                    font-weight: 400;
+                    color: #F5CE8C;
+                }
+            }
+            .inp-bot {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 6px;
+                .bot-left {
+                    font-size: 11px;
+                    color: #F5CE8C;
+                    font-weight: 400;
+                    max-width: 176px;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                }
+                .bot-btn {
+                    border-radius: 6px;
+                    width: 58px;
+                    height: 27px;
+                    text-align: center;
+                    line-height: 27px;
+                    background: linear-gradient(0deg, #F5CE8C, #BA8F4A);
+                    font-size: 12px;
+                    color: #333333;
+                    font-weight: 400;
+                    &:active {
+                        opacity: 0.6;
+                    }
+                }
+            }
+        }
+        .need {
+            margin-top: 15px;
+            padding-left: 10px;
+            font-size: 11px;
+            font-weight: 400;
+            color: #FFFFFF;
+        }
+        .need-re {
+            margin-top: 15px;
+            padding-right: 10px;
+            text-align: right;
+            font-size: 11px;
+            color: #F5CE8C;
+            font-weight: 400;
+        }
+        .bottom-btn {
+            background: linear-gradient(0deg, #F5CE8C 0%, #BA8F4A 100%);
+            height: 40px;
+            line-height: 40px;
+            font-size: 13px;
+            font-weight: 400;
+            color: #333333;
+            text-align: center;
+            border-radius: 30px;
+            margin-top: 20px;
+            &:active {
+                opacity: 0.6;
+            }
+        }
+    }
+    .submit-mask {
+        width: 320px;
+        height: 277px;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        position: relative;
+        margin-top: 50vh;
+        margin-left: 50vw;
+        transform: translateX(-50%) translateY(-50%);
+        padding: 30px 20px;
+        .close {
+            position: absolute;
+            right: 35px;
+            top: 32px;
+            width: 17px;
+            height: 17px;
+        }
+        .mask-title {
+            margin-bottom: 30px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #FFFFFF;
+            text-align: center;
+        }
+        .suanli {
+            margin: 15px 0;
+            font-size: 13px;
+            color: #F5CE8C;
+            font-weight: 400;
+        }
+        .line {
+            border-bottom: 1px solid #000000;
+        }
+        .price-line {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            span {
+                &:nth-of-type(1) {
+                    width: 14px;
+                    height: 14px;
+                    text-align: center;
+                    line-height: 14px;
+                    border: 1px solid #FFFFFF;
+                    font-size: 10px;
+                    margin-right: 6px;
+                    border-radius: 50%;
+                    color: #FFFFFF;
+                }
+                &:nth-of-type(2) {
+                    font-size: 13px;
+                    font-weight: 400;
+                    color: #FFFFFF;
+                }
+            }
+        }
+        .btn-box {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            .btn-item {
+                height: 32px;
+                width: 100px;
+                text-align: center;
+                line-height: 32px;
+                border-radius: 4px;
+                font-size: 14px;
+                font-weight: 400;
+                margin-top: 10px;
+                &:active {
+                    opacity: 0.6;
+                }
+                &:nth-of-type(1) {
+                    border: 1px solid #F4CE8B;
+                    color: #FFFFFF;
+                }
+                &:nth-of-type(2) {
+                    background: linear-gradient(0deg, #F5CE8C 0%, #BA8F4A 100%);
+                    color: #333333;
+                }
+            }
+        }
+    }
+}

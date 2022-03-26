@@ -1,0 +1,19 @@
+/*
+ * @Author: your name
+ * @Date: 2021-11-22 11:04:13
+ * @LastEditTime: 2021-12-10 16:14:04
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: /RHOS/rhos/src/App.css
+ */
+ html, body, #root {
+    height: 100%;
+    background: linear-gradient(90deg, #030000 0%, #242424 50%, #030000 100%);
+ }
+.App {
+    max-width: 800px;
+    margin: 0 auto;
+    height: 100%;
+    /* background: linear-gradient(90deg, #030000 0%, #242424 50%, #030000 100%); */
+    /* padding: 10px; */
+}

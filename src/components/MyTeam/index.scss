@@ -1,0 +1,88 @@
+.my-team {
+    padding: 10px;
+    .suanli {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        border-radius: 6px;
+        background: linear-gradient(90deg, #1E1C1C 0%, #2D2D2D 50%, #1E1C1C 100%);
+        margin-bottom: 10px;
+        span {
+            color: #FFFFFF;
+            font-size: 13px;
+            &:nth-of-type(2) {
+                font-weight: bold;
+            }
+        }
+    }
+    .dailingqu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        border-radius: 6px;
+        background: linear-gradient(90deg, #1E1C1C 0%, #2D2D2D 50%, #1E1C1C 100%);
+        margin-bottom: 10px;
+        .dailingqu-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            span {
+                color: #FFFFFF;
+                font-size: 13px;
+                &:nth-of-type(2) {
+                    font-weight: bold;
+                }
+            }
+        }
+        .dailingqu-btn {
+            background: linear-gradient(0deg, #F5CE8C 0%, #BA8F4A 100%);
+            border-radius: 30px;
+            padding: 3px 20px;
+            font-size: 13px;
+            color: #333333;
+            &:active {
+                opacity: 0.6;
+            }
+        }
+    }
+    .team-list {
+        padding: 15px;
+        border-radius: 6px;
+        background: linear-gradient(90deg, #1E1C1C 0%, #2D2D2D 50%, #1E1C1C 100%);
+        margin-bottom: 10px;
+        color: #FFFFFF;
+        .list-title {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            span {
+                font-size: 11px;
+            }
+        }
+        .list-line {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            &:nth-last-of-type(1) {
+                margin-bottom: 0;
+            }
+            span {
+                max-width: 45%;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+                font-size: 13px;
+                font-weight: bold;
+            }
+        }
+    }
+}

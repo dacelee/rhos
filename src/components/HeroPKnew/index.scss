@@ -1,0 +1,377 @@
+$move-time: 1s;// 怪物和英雄进入战场的移动时间
+$start-position: 150px; // 怪物和英雄起始位置
+
+.container {
+    transition: all .5s ease-in-out;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    transform-origin: 0 0;
+    .goback {
+        position: absolute;
+        left: 15px;
+        top: 15px;
+    }
+    .game-info-panel {
+        width: 550px;
+        height: 100px;
+        background-size: cover;
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        margin: auto;
+    }
+    
+    .game-info {
+        width: 550px;
+        height: 100px;
+        position: relative;
+    }
+    
+    .game-blood {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    
+    .game-blood-strip {
+        width: 153px;
+        height: 20px;
+        // background-image: url("../static/blood-strip-bg.png");
+        // background-size: cover;
+        background-size: 100% 100%;
+        padding: 6px 22px;
+    }
+    
+    .strip-left {
+        margin-left: 40px;
+    }
+    
+    .strip-right {
+        margin-right: 40px;
+    }
+    
+    // .blood-volume {
+        // width: 60px;
+        // height: 10px;
+        // margin-left: 12px;
+        // padding-top: 4px;
+    // }
+    .attribute-desc {
+        color: #FFFFFF;
+    }
+    .blood-red {
+        width: 54px;
+        height: 8px;
+        border-radius: 2px;
+        background: linear-gradient(90deg, #DA0000, #830101);
+    }
+    
+    .blood-blue {
+        width: 54px;
+        height: 8px;
+        border-radius: 2px;
+        background: linear-gradient(-68deg, #002047, #093B6E);
+    }
+    
+    .Broadcast {
+        // width: 36px;
+        // height: 12px;
+        flex: 1;
+        margin: 10px;
+        height: 55px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.58);
+        border-radius: 5px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 12px;
+        color: #BA8F4A;
+    }
+    
+    .hero-info {
+        padding: 2px 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 12px;
+        padding-top: 22px;
+    }
+    
+    .heroImage {
+        width: 60px;
+        height: 70px;
+        background: #896435;
+        // background-image: url('../static/hero.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .hero-info-item, .attribute-msg, .attribute-item {
+        display: flex;
+        align-items: center;
+    }
+    
+    
+    .attribute-item {
+        padding: 4px 0px;
+    }
+    
+    .attribute-msg {
+        margin: 0px 3px;
+    }
+    
+    .attribute-number {
+        width: 35px;
+        height: 12px;
+        margin-left: 4px;
+        border-radius: 8px;
+        color: #fff;
+        text-align: center;
+        line-height: 12px;
+    }
+    
+    .color-red {
+        background: #CD2220;
+    }
+    
+    .color-green {
+        background: #33A365;
+    }
+    
+    .color-blue {
+        background: #27A0B4;
+    }
+    
+    .color-brown {
+        background: #CE6B22;
+    }
+    
+    .color-yellow {
+        background: #F3C431;
+    }
+    
+    .color-purple {
+        background: #7F38E9;
+    }
+    
+    .people {
+        width: 150px;
+        // height: 80px;
+        position: absolute;
+        left: $start-position;
+        top: 85px;
+    }
+    
+    .people2 {
+        width: 150px;
+        // height: 80px;
+        position: absolute;
+        right: $start-position;
+        top: 85px;
+        transform: rotateY(180deg);
+    }
+    
+    .special {
+        width: 250px;
+        height: 112.5px;
+        // display: none;
+        position: absolute;
+        left: 0px;
+        right: 16px;
+        margin: auto;
+        // bottom: 67px;
+        top: 85px;
+    }
+    
+    .play-game-btn {
+        width: 75px;
+        height: 20px;
+        background-color: red;
+        box-shadow: 0 0 5px 0 #000;
+        border-radius: 10px;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        margin: auto;
+        bottom: 72px;
+    }
+    // 横屏动画
+    .hero-go-h {
+        animation: heroGoH $move-time linear 1 forwards;
+    }
+    .monster-go-h {
+        animation: monsterGoH $move-time linear 1 forwards;
+    }
+    .hero-pk-h {
+        
+        left: calc(100vw / 2 - 150px)
+    }
+    .monster-pk-h {
+        right: calc(100vw / 2 - 150px)
+    }
+    .hero-back-h {
+        animation: heroBackH $move-time linear 1 forwards;
+    }
+    .monster-back-h {
+        animation: monsterBackH $move-time linear 1 forwards;
+    }
+    // 竖屏动画
+    .hero-go-s {
+        animation: heroGoS $move-time linear 1 forwards;
+    }
+    .monster-go-s {
+        animation: monsterGoS $move-time linear 1 forwards;
+    }
+    .hero-pk-s {
+        
+        left: calc(100vh / 2 - 150px)
+    }
+    .monster-pk-s {
+        right: calc(100vh / 2 - 150px)
+    }
+    .hero-back-s {
+        animation: heroBackS $move-time linear 1 forwards;
+    }
+    .monster-back-s {
+        animation: monsterBackS $move-time linear 1 forwards;
+    }
+    .success-mask {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .mask-img {
+            width: 220px;
+            height: 100px;
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .success-num {
+            font-size: 25px;
+            font-weight: bold;
+            color: #F5CE8C;
+        }
+        .success-text {
+            font-size: 12px;
+            color: #BA8F4A;
+            margin-top: 10px;
+        }
+        .success-btn {
+            width: 115px;
+            height: 36px;
+            line-height: 32px;
+            text-align: center;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            font-size: 12px;
+            color: #FFFFFF;
+            transform: translateX(-50%);
+            &:active {
+                opacity: 0.6;
+            }
+        }
+        .fail-text {
+            font-size: 12px;
+            color: #BA8F4A;
+        }
+    }
+    .mask-dir-s {
+        margin-top: 50vw;
+        margin-left: 50vh;
+    }
+}
+.container-rotate {
+    // transform: rotate(90deg);
+    
+    transform: rotateZ(90deg) translateY(-100%)
+}
+// 横屏动画关键帧
+@keyframes heroGoH {
+    0% {
+        left: $start-position;
+    }
+    100% {
+        left: calc(100vw / 2 - 150px)
+    }
+}
+@keyframes monsterGoH {
+    0% {
+        right: $start-position;
+    }
+    100% {
+        right: calc(100vw / 2 - 150px)
+    }
+}
+@keyframes heroBackH {
+    0% {
+        left: calc(100vw / 2 - 150px)
+    }
+    100% {
+        left: $start-position;
+    }
+}
+@keyframes monsterBackH {
+    0% {
+        right: calc(100vw / 2 - 150px)
+    }
+    100% {
+        right: $start-position;
+    }
+}
+// 竖屏动画关键帧
+@keyframes heroGoS {
+    0% {
+        left: $start-position;
+    }
+    100% {
+        left: calc(100vh / 2 - 150px)
+    }
+}
+@keyframes monsterGoS {
+    0% {
+        right: $start-position;
+    }
+    100% {
+        right: calc(100vh / 2 - 150px)
+    }
+}
+@keyframes heroBackS {
+    0% {
+        left: calc(100vh / 2 - 150px)
+    }
+    100% {
+        left: $start-position;
+    }
+}
+@keyframes monsterBackS {
+    0% {
+        right: calc(100vh / 2 - 150px)
+    }
+    100% {
+        right: $start-position;
+    }
+}

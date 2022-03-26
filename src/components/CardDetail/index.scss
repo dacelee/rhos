@@ -1,0 +1,28 @@
+.column-list {
+    flex-direction: column;
+    .card-img-box {
+        width: 130px;
+        height: 200px;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .card-detail-box {
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #eeeeee;
+    }
+    .column-title {
+        width: 100%;
+        color: #ece90b;
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+    .column-detail-box {
+        width: 100%;
+        background: #0000005d;
+        padding: 10px;
+        border-radius: 6px;
+        font-size: 12px;
+        color: #ece90b;
+    }
+}

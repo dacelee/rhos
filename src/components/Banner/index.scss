@@ -1,0 +1,115 @@
+.banner {
+    height: 130px;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    user-select: none;
+    border-radius: 10px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.notic-box {
+    padding: 0 10px;
+    border-radius: 40px;
+    background: #202020;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    .notic-img {
+        font-size: 0;
+        border-right: 1px solid #878787;
+        img {
+            width: 60px;
+            height: 18px;
+            margin-right: 8px;
+        }
+    }
+    .notic-ui {
+        flex: 1;
+        --background-color: transparent;
+        --border-color: transparent;
+        font-size: 13px;
+    }
+    .notic-more {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        span {
+            font-size: 12px;
+            color: #F5CE8C;
+        }
+        img {
+            width: 7px;
+            height: 12px;
+            margin-left: 6px;
+        }
+    }
+}
+
+.assets {
+    margin-top: 10px;
+    height: 157px;
+    padding: 10px 20px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    .assets-top {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        .top-text {
+            font-size: 13px;
+            font-weight: bold;
+            color: #FFFFFF;
+        }
+        .center-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            word-break: break-all;
+            .left-top {
+                font-size: 11px;
+                color: #FFFFFF;
+            }
+            .left-bottom {
+                word-break: break-all;
+                // margin-top: px;
+                font-size: 13px;
+                font-weight: bold;
+                color: #FFFFFF;
+            }
+            &:nth-of-type(1) {
+                margin-right: 10px;
+            }
+        }
+        .center-right {
+            padding: 4px 16px;
+            background: linear-gradient(0deg, #F5CE8C 0%, #BA8F4A 100%);
+            font-size: 13px;
+            color: #333333;
+            border-radius: 40px;
+            &:active {
+                opacity: 0.6;
+            }
+        }
+        .flex-p {
+            width: 50%;
+        }
+    }
+    .assets-top-bot {
+        align-items: flex-start;
+    }
+    .margin20 {
+        margin-top: 20px;
+    }
+}
+.nav-link {
+    text-decoration: none;
+}

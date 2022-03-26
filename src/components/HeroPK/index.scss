@@ -1,0 +1,399 @@
+$hero_monster_animation_time: 0.7s;
+$hero_monster_attack_time: 0.2s;
+.pk-page {
+    scrollbar-width: none; /* firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+    overflow-x: hidden;
+    overflow-y: auto;
+    .pk-warp {
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        height: 208px;
+        margin-top: 20px;
+        position: relative;
+        animation: warp 1s cubic-bezier(0.18, 0.89, 0.32, 1.28) 1 backwards;
+        .hero-box {
+            height: 225px;
+            width: 50%;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            position: absolute;
+            bottom: 0;
+            font-size: 0;
+        }
+        .left-hero {
+            animation: hero-left $hero_monster_animation_time linear 1s 1 backwards;
+        }
+        .left-hero-other {
+            opacity: 1;
+        }
+        .right-hero {
+            opacity: 0;
+            right: 0;
+            animation: hero-right $hero_monster_animation_time linear 1s 1 forwards;
+        }
+        .hero-box-other {
+            height: 100%;
+            width: 100%;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            position: absolute;
+            bottom: 0;
+        }
+        .right-hero-other {
+            opacity: 1;
+        }
+        .hero-attack {
+            animation: hero-atta $hero_monster_attack_time cubic-bezier(0.18, 0.89, 0.32, 1.28) 1;
+        }
+        .monster-attack {
+            opacity: 1;
+            animation: monster-atta $hero_monster_attack_time cubic-bezier(0.18, 0.89, 0.32, 1.28) 1 forwards;
+        }
+        .blood-out-box {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 100%;
+            height: 24px;
+            position: absolute;
+            left: 0;
+            bottom: -12px;
+            .blood-box {
+                background-size: 100% 100%;
+                background-repeat: no-repeat;
+                width: 155px;
+                height: 24px;
+                padding: 10px 26px;
+                animation: blood 1s linear 1s 1 backwards;
+            }
+        }
+        .hero-name {
+            position: absolute;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            left: 50%;
+            transform: translateX(-50%);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            width: 272px;
+            height: 22px;
+            bottom: 20px;
+            div {
+                width: 50%;
+                text-overflow: ellipsis;
+                text-align: center;
+                font-size: 12px;
+                color: #FFFFFF;
+                line-height: 22px;
+                word-break: keep-all;
+                overflow: hidden;
+            }
+            animation: hero-name 1s linear 1;
+        }
+        .vs {
+            width: 86px;
+            height: 94px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            top: 70px;
+            animation: vs 1s cubic-bezier(0.77, 0.01, 1, 0.68) 2s 1 backwards;
+        }
+        .hero-loss {
+            position: absolute;
+            left: calc(100vw / 4 - 30px);
+            bottom: 70px;
+            opacity: 0;
+            font-size: 22px;
+            color: #ffffff;
+            font-weight: bold;
+            z-index: 10;
+        }
+        .monster-loss {
+            position: absolute;
+            right: calc(100vw / 4 - 30px);
+            bottom: 70px;
+            opacity: 0;
+            font-size: 22px;
+            color: #ffffff;
+            font-weight: bold;
+            z-index: 10;
+        }
+        .loss-blood {
+            animation: loss-blood 1s linear 1;
+        }
+        @keyframes loss-blood {
+            0% {
+                opacity: 1;
+                bottom: 70px;
+                color: crimson;
+            }
+            100% {
+                opacity: 0;
+                bottom: 120px;
+                color: #FFFFFF;
+            }
+        }
+    }
+    .pk-shuxing-box {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        margin-top: 10px;
+        padding: 10px;
+        .shuxing-item {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            .shuxing-item-line {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 6px;
+                // opacity: 0;
+                &:nth-last-of-type(1) {
+                    margin-bottom: 0;
+                }
+                .shuxing-name {
+                    font-size: 12px;
+                    color: #FFFFFF;
+                    margin-right: 6px;
+                }
+                .shuxing-num {
+                    font-size: 12px;
+                    color: #FFFFFF;
+                    width: 80px;
+                    text-align: center;
+                    border-radius: 30px;
+                    background-color: #CD2220;
+                }
+                .ll {
+                    background-color: #33A365;
+                }
+                .zl {
+                    background-color: #27A0B4;
+                }
+                .mj {
+                    background-color: #CE6B22;
+                }
+                .yz {
+                    background-color: #F3C431;
+                }
+                .js {
+                    background-color: #7F38E9;
+                }
+                @for $i from 1 through 6 {
+                    &:nth-of-type(#{$i}) {
+                        animation: shuxing 1s linear ($i + 2) / 5 + s  1 backwards;
+                    }
+                    @keyframes shuxing {
+                        0% {
+                            opacity: 0;
+                            transform: translateX(-100px);
+                        }
+                        100% {
+                            opacity: 1;
+                            transform: translateX(0);
+                        }
+                    }
+                }
+            }
+            
+        }
+        
+    }
+    .pk-message-box {
+        padding: 10px;
+        .pk-message {
+            border-radius: 8px;
+            background: linear-gradient(90deg, #1D1B1B 0%, #262626 50%, #1D1B1B 100%);
+            overflow: hidden;
+            padding: 10px 0;
+            max-height: calc(100vh - 455px);
+            overflow-y: scroll;
+            animation: pk-msg 0.5s linear 2s 1 backwards;
+            .pk-title {
+                padding: 10px 20px;
+                font-size: 13px;
+                color: #F5CE8C;
+                font-weight: bold;
+            }
+            .pk-msg {
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
+                padding: 10px 20px;
+                border-bottom: 1px solid #000000;
+                animation: pk-msg 0.5s linear 1 backwards;
+                &:nth-last-of-type(1) {
+                    border-bottom: none;
+                }
+                .pk-hero {
+                    color: #BA8F4A;
+                    font-size: 12px;
+                }
+                .pk-text {
+                    color: #FFFFFF;
+                    font-size: 12px;
+                }
+                .pk-number {
+                    color: #BA8F4A;
+                    font-size: 12px;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+    .success-mask {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .mask-img {
+            width: 220px;
+            height: 100px;
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .success-num {
+            font-size: 25px;
+            font-weight: bold;
+            color: #F5CE8C;
+        }
+        .success-text {
+            font-size: 12px;
+            color: #BA8F4A;
+            margin-top: 10px;
+        }
+        .success-btn {
+            width: 115px;
+            height: 36px;
+            line-height: 32px;
+            text-align: center;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            font-size: 12px;
+            color: #FFFFFF;
+            transform: translateX(-50%);
+            &:active {
+                opacity: 0.6;
+            }
+        }
+        .fail-text {
+            font-size: 12px;
+            color: #BA8F4A;
+        }
+    }
+}
+
+@keyframes warp {
+    0% {
+        transform: perspective(1000px) scale(1.2, 1.2) translateZ(100px);
+    }
+    80% {
+        transform: perspective(1000px) scale(0.9, 0.9) translateZ(0px);
+    }
+    90% {
+        transform: perspective(1000px) scale(1.1, 1.1) translateZ(0px);
+    }
+    100% {
+        transform: perspective(1000px) scale(1, 1) translateZ(0px);
+    }
+}
+@keyframes hero-left {
+    0% {
+        left: -100px;
+        opacity: 0;
+    }
+    90%{
+        left: 10px;
+        opacity: 1;
+    }
+    100% {
+        left: 0;
+        opacity: 1;
+    }
+}
+@keyframes hero-right {
+    0% {
+        right: -100px;
+        opacity: 0;
+    }
+    90%{
+        right: 10px;
+        opacity: 1;
+    }
+    100% {
+        right: 0;
+        opacity: 1;
+    }
+}
+@keyframes blood {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes hero-name {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes vs {
+    0% {
+        top: -100px;
+        opacity: 0;
+    }
+    100% {
+        top: 70px;
+        opacity: 1;
+    }
+}
+@keyframes pk-msg {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes hero-atta {
+    0% {
+        left: 0;
+    }
+    50% {
+        left: 20px; 
+    }
+    100% {
+        left: 0;
+    }
+}
+@keyframes monster-atta {
+    0% {
+        right: 0;
+    }
+    50% {
+        right: 20px; 
+    }
+    100% {
+        right: 0;
+    }
+}

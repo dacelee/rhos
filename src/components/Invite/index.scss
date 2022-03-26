@@ -1,0 +1,65 @@
+.invite-page {
+    height: calc(100vh - 45px);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    position: relative;
+    .invite-center {
+        width: 350px;
+        height: 500px;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-60%);
+        .center-box {
+            width: 320px;
+            padding: 20px;
+            margin: 0 auto;
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .invite-logo {
+                width: 75px;
+                height: 37px;
+            }
+            .invite-url {
+                margin-top: 50px;
+                padding: 10px;
+                background: rgba($color: #000000, $alpha: 0.3);
+                word-break: break-all;
+                border-radius: 5px;
+            }
+            .copy-btn {
+                margin-top: 20px;
+                width: 150px;
+                max-width: 150px;
+                text-align: center;
+                height:40px;
+                line-height: 40px;
+                font-size: 14px;
+                color: #FFFFFF;
+                border-radius: 5px;
+                background: linear-gradient(0deg, #F5CE8C 0%, #BA8F4A 100%);
+            }
+            .qrcode {
+                margin-top: 20px;
+                font-size: 0;
+                display: flex;
+                flex-flow: column;
+                justify-content: center;
+                align-items: center;
+                border: 3px solid #F4CD8B;
+                width: 120px;
+                height: 120px;
+                .qr {
+                    width: 110px;
+                    height: 110px;
+                }
+            }
+        }
+    }
+}
